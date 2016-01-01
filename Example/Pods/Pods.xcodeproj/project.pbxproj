@@ -25,6 +25,8 @@
 		94FDCD720E559DF4C535B3A8E93080C3 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE969126FF0EDA7A0F3522919CB4C5 /* FBSnapshotTestCasePlatform.m */; };
 		A38506CF4700DA06E89C871D8388D83E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2393D1A899C707F79A64672C46ED238F /* UIKit.framework */; };
 		A7F9AAC65FC2D87C34EA9D6A5ACB4401 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B58D5BA3EB09C98A4C815311C792DC /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A945DD331C360291004F793B /* JXPictureSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A945DD311C360291004F793B /* JXPictureSelectionViewController.h */; };
+		A945DD341C360291004F793B /* JXPictureSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A945DD321C360291004F793B /* JXPictureSelectionViewController.m */; };
 		A97D3C871CB3888A0003C1FA /* JXPictureSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A97D3C831CB3888A0003C1FA /* JXPictureSelectionView.h */; };
 		A97D3C881CB3888A0003C1FA /* JXPictureSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A97D3C831CB3888A0003C1FA /* JXPictureSelectionView.h */; };
 		A97D3C891CB3888A0003C1FA /* JXPictureSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A97D3C831CB3888A0003C1FA /* JXPictureSelectionView.h */; };
@@ -129,6 +131,8 @@
 		8CDE673C8BA909DDDDB8BFAE9848BFC0 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		9BE2B4DEB20C9299E7F50073A68CB748 /* Pods_JXPictureSelectionView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXPictureSelectionView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F26B62A3A3B84647F188D6281E9A1E2 /* Pods-JXPictureSelectionView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JXPictureSelectionView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A945DD311C360291004F793B /* JXPictureSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPictureSelectionViewController.h; sourceTree = "<group>"; };
+		A945DD321C360291004F793B /* JXPictureSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPictureSelectionViewController.m; sourceTree = "<group>"; };
 		A97D3C831CB3888A0003C1FA /* JXPictureSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPictureSelectionView.h; sourceTree = "<group>"; };
 		A97D3C841CB3888A0003C1FA /* JXPictureSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPictureSelectionView.m; sourceTree = "<group>"; };
 		A97D3C851CB3888A0003C1FA /* JXPictureSelectionViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPictureSelectionViewConfiguration.h; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				A97D3C841CB3888A0003C1FA /* JXPictureSelectionView.m */,
 				A97D3C851CB3888A0003C1FA /* JXPictureSelectionViewConfiguration.h */,
 				A97D3C861CB3888A0003C1FA /* JXPictureSelectionViewConfiguration.m */,
+				A945DD311C360291004F793B /* JXPictureSelectionViewController.h */,
+				A945DD321C360291004F793B /* JXPictureSelectionViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				C2FCA222BBD132CD472AED67C861CDCC /* JXPictureSelectionView-umbrella.h in Headers */,
 				A97D3C881CB3888A0003C1FA /* JXPictureSelectionView.h in Headers */,
 				A97D3C911CB3888A0003C1FA /* JXPictureSelectionViewConfiguration.h in Headers */,
+				A945DD331C360291004F793B /* JXPictureSelectionViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A945DD341C360291004F793B /* JXPictureSelectionViewController.m in Sources */,
 				A97D3C8C1CB3888A0003C1FA /* JXPictureSelectionView.m in Sources */,
 				1D46DF16466A3E09FBFCCD87330F712B /* JXPictureSelectionView-dummy.m in Sources */,
 				A97D3C951CB3888A0003C1FA /* JXPictureSelectionViewConfiguration.m in Sources */,

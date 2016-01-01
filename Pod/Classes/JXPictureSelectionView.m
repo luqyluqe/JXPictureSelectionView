@@ -104,6 +104,10 @@
     [self.pictures addObject:url];
     UIImageView* pictureView=[[UIImageView alloc] init];
     [self addPictureView:pictureView];
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(pictureSelectionView:loadRemotePictureAtURL:intoPictureView:)]) {
+        [self.delegate pictureSelectionView:self loadRemotePictureAtURL:url intoPictureView:pictureView];
+        return;
+    }
     if (self.loadRemotePictureAction) {
         self.loadRemotePictureAction(pictureView,url);
     }
@@ -147,6 +151,10 @@
 
 -(void)addButtonTapped:(UIButton*)button
 {
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(pictureSelectionView:didClickOnAddButton:)]) {
+        [self.delegate pictureSelectionView:self didClickOnAddButton:self.addButton];
+        return;
+    }
     if (self.addButtonAction) {
         self.addButtonAction();
     }

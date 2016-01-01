@@ -7,7 +7,7 @@
 //
 
 #import "JXViewController.h"
-#import "JXPictureSelectionView.h"
+#import "JXPictureSelectionViewController.h"
 
 @interface JXViewController ()
 
@@ -24,12 +24,12 @@
     JXPictureSelectionViewConfiguration* config=[JXPictureSelectionViewConfiguration defaultConfiguration];
     config.rowGap=20;
     config.columnGap=8;
-    JXPictureSelectionView* pictureSelectionView=[[JXPictureSelectionView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height) configuration:config];
+    JXPictureSelectionViewController* pictureSelectionVC=[[JXPictureSelectionViewController alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height) configuration:config];
     UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
     for (int i=0; i<20; i++) {
-        [pictureSelectionView addPicture:cannian];
+        [pictureSelectionVC addPicture:cannian];
     }
-    [self.view addSubview:pictureSelectionView];
+    [self.view addSubview:pictureSelectionVC.view];
 }
 
 - (void)didReceiveMemoryWarning

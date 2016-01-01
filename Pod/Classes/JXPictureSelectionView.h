@@ -8,8 +8,19 @@
 typedef void(^JXPictureSelectionViewAddButtonAction)();
 typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictureView,NSURL* url);
 
+@class JXPictureSelectionView;
+
+@protocol JXPictureSelectionViewDelegate <NSObject>
+
+-(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView didClickOnAddButton:(id)sender;
+-(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView loadRemotePictureAtURL:(NSURL*)url intoPictureView:(UIImageView*)pictureView;
+-(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView didClickOnPicture:(UIImage*)picture inPictureView:(UIImageView*)pictureView;
+
+@end
+
 @interface JXPictureSelectionView : UIView
 
+@property (weak,nonatomic) id<JXPictureSelectionViewDelegate> delegate;
 @property (strong,nonatomic) JXPictureSelectionViewConfiguration* config;
 @property (strong,nonatomic) NSMutableArray* pictures;
 @property (copy,nonatomic) JXPictureSelectionViewAddButtonAction addButtonAction;
