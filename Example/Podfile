@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'JXPictureSelectionView_Example', :exclusive => true do
+  pod 'JXPictureSelectionView', :path => '../'
+end
+
+target 'JXPictureSelectionView_Tests', :exclusive => true do
+  pod 'JXPictureSelectionView', :path => '../'
+
+  pod 'FBSnapshotTestCase'
+end
