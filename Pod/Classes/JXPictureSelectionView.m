@@ -95,7 +95,7 @@
     [self.pictures removeObjectAtIndex:index];
     for (UIView* view in self.subviews) {
         if (view==self.addButton) {
-            [UIView animateWithDuration:0.4 animations:^{
+            [UIView animateWithDuration:self.config.animationDuration animations:^{
                 [self layoutAddButton];
             }];
         }else if (view.tag==index) {
@@ -104,11 +104,11 @@
             view.tag-=1;
             CGPoint position=[self positionOfIndex:view.tag];
             if ([view isKindOfClass:[UIImageView class]]) {
-                [UIView animateWithDuration:0.4 animations:^{
+                [UIView animateWithDuration:self.config.animationDuration animations:^{
                     view.center=position;
                 }];
             }else if ([view isKindOfClass:[UIButton class]]) {
-                [UIView animateWithDuration:0.4 animations:^{
+                [UIView animateWithDuration:self.config.animationDuration animations:^{
                     view.center=CGPointMake(position.x+self.pictureWidth/2, position.y-self.pictureHeight/2);
                 }];
             }
