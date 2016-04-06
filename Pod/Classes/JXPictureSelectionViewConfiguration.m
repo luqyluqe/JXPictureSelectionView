@@ -19,6 +19,9 @@
     config.aspectRatio=1;
     config.removeButtonImage=[UIImage imageNamed:@"remove_button"];
     config.removeButtonSize=CGSizeMake(20,20);
+    config.addButtonImage=[UIImage imageNamed:@"plus"];
+    config.addButtonImageSize=CGSizeMake(80, 80);
+    config.addButtonBackgroundColor=[UIColor clearColor];
     return config;
 }
 

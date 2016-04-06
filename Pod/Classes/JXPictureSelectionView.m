@@ -9,6 +9,8 @@
 @property (nonatomic,assign) CGFloat pictureWidth;
 @property (nonatomic,assign) CGFloat pictureHeight;
 
+@property (nonatomic,strong) UIView* addButton;
+
 @end
 
 @implementation JXPictureSelectionView
@@ -78,20 +80,31 @@
                 [view removeFromSuperview];
             }else if (view.tag>index){
                 view.tag-=1;
-                NSUInteger column=view.tag%self.config.numberOfColumns;
-                NSUInteger row=view.tag/self.config.numberOfColumns;
+                CGPoint position=[self positionOfIndex:view.tag];
                 if ([view isKindOfClass:[UIImageView class]]) {
                     [UIView animateWithDuration:0.4 animations:^{
-                        view.frame=CGRectMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row, self.pictureWidth, self.pictureHeight);
+                        view.center=position;
                     }];
                 }else if ([view isKindOfClass:[UIButton class]]) {
                     [UIView animateWithDuration:0.4 animations:^{
-                        view.center=CGPointMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column+self.pictureWidth, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row);
+                        view.center=CGPointMake(position.x+self.pictureWidth/2, position.y-self.pictureHeight/2);
                     }];
                 }
             }
         }
     }
+}
+
+-(CGPoint)positionOfIndex:(NSUInteger)index
+{
+    NSUInteger column=index%self.config.numberOfColumns;
+    NSUInteger row=index/self.config.numberOfColumns;
+    CGPoint position=CGPointMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column+self.pictureWidth/2, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row+self.pictureHeight/2);
+    return position;
+}
+
+-(void)layoutAddButton
+{
 }
 
 @end

@@ -16,6 +16,9 @@
 @property (assign,nonatomic) CGFloat aspectRatio;
 @property (strong,nonatomic) UIImage* removeButtonImage;
 @property (assign,nonatomic) CGSize removeButtonSize;
+@property (strong,nonatomic) UIImage* addButtonImage;
+@property (assign,nonatomic) CGSize addButtonImageSize;
+@property (copy,nonatomic) UIColor* addButtonBackgroundColor;
 
 +(JXPictureSelectionViewConfiguration*)defaultConfiguration;
 
