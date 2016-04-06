@@ -105,7 +105,7 @@
     UIImageView* pictureView=[[UIImageView alloc] init];
     [self addPictureView:pictureView];
     if (self.loadRemotePictureAction) {
-        self.loadRemotePictureAction(pictureView);
+        self.loadRemotePictureAction(pictureView,url);
     }
 }
 

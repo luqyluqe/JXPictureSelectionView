@@ -6,7 +6,7 @@
 #import "JXPictureSelectionViewConfiguration.h"
 
 typedef void(^JXPictureSelectionViewAddButtonAction)();
-typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictureView);
+typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictureView,NSURL* url);
 
 @interface JXPictureSelectionView : UIView
 
