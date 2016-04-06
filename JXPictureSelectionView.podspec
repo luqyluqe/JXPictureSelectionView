@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JXPictureSelectionView"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "Nothing."
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ Nothing special.
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'JXPictureSelectionView' => ['Pod/Assets/']
+    'JXPictureSelectionView' => ['Pod/Assets/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
