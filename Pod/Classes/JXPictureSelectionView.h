@@ -19,4 +19,6 @@ typedef void(^JXPictureSelectionViewAddButtonAction)();
 -(void)addPicture:(UIImage*)picture;
 -(void)addPictures:(NSArray*)pictures;
 
+-(void)addRemotePictureWithURL:(NSURL*)url;
+
 @end

@@ -53,26 +53,9 @@
     if (!picture||self.pictures.count>=self.config.capacity) {
         return;
     }
-    NSInteger tag=self.pictures.count;
     [self.pictures addObject:picture];
-    NSUInteger index=self.subviews.count/2;
-    NSUInteger column=index%self.config.numberOfColumns;
-    NSUInteger row=index/self.config.numberOfColumns;
-    
     UIImageView* pictureView=[[UIImageView alloc] initWithImage:picture];
-    pictureView.tag=tag;
-    pictureView.frame=CGRectMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row, self.pictureWidth, self.pictureHeight);
-    [self addSubview:pictureView];
-    
-    UIButton* removeButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    removeButton.tag=tag;
-    [removeButton setBackgroundImage:self.config.removeButtonImage forState:UIControlStateNormal];
-    removeButton.frame=CGRectMake(0, 0, self.config.removeButtonSize.width,self.config.removeButtonSize.height);
-    removeButton.center=CGPointMake(pictureView.frame.origin.x+self.pictureWidth, pictureView.frame.origin.y);
-    removeButton.tag=tag;
-    [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:removeButton];
-    [self layoutAddButton];
+    [self addPictureView:pictureView];
 }
 
 -(void)removeButtonPressed:(UIButton*)sender
@@ -114,6 +97,31 @@
             }
         }
     }
+}
+
+-(void)addRemotePictureWithURL:(NSURL *)url
+{
+    
+}
+
+-(void)addPictureView:(UIImageView*)pictureView
+{
+    NSUInteger index=(self.subviews.count-1)/2;
+    NSUInteger column=index%self.config.numberOfColumns;
+    NSUInteger row=index/self.config.numberOfColumns;
+    pictureView.tag=index;
+    pictureView.frame=CGRectMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row, self.pictureWidth, self.pictureHeight);
+    [self addSubview:pictureView];
+    
+    UIButton* removeButton=[UIButton buttonWithType:UIButtonTypeCustom];
+    removeButton.tag=index;
+    [removeButton setBackgroundImage:self.config.removeButtonImage forState:UIControlStateNormal];
+    removeButton.frame=CGRectMake(0, 0, self.config.removeButtonSize.width,self.config.removeButtonSize.height);
+    removeButton.center=CGPointMake(pictureView.frame.origin.x+self.pictureWidth, pictureView.frame.origin.y);
+    removeButton.tag=index;
+    [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:removeButton];
+    [self layoutAddButton];
 }
 
 -(CGPoint)positionOfIndex:(NSUInteger)index
