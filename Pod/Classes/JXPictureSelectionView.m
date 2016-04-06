@@ -33,7 +33,7 @@
 
 -(void)addPicture:(UIImage*)picture
 {
-    if (!picture) {
+    if (!picture||self.pictures.count>=self.config.capacity) {
         return;
     }
     NSInteger tag=self.pictures.count;

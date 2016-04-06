@@ -23,7 +23,7 @@
     CGRect bounds=self.view.bounds;
     JXPictureSelectionView* pictureSelectionView=[[JXPictureSelectionView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height)];
     UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
-    for (int i=0; i<9; i++) {
+    for (int i=0; i<20; i++) {
         [pictureSelectionView addPicture:cannian];
     }
     [self.view addSubview:pictureSelectionView];

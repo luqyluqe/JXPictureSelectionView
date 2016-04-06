@@ -6,6 +6,7 @@
 
 @interface JXPictureSelectionViewConfiguration : NSObject
 
+@property (assign,nonatomic) NSUInteger capacity;
 @property (assign,nonatomic) NSUInteger numberOfColumns;
 @property (assign,nonatomic) CGFloat paddingLeft;
 @property (assign,nonatomic) CGFloat paddingRight;

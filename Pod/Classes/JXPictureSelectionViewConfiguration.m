@@ -9,6 +9,7 @@
 +(JXPictureSelectionViewConfiguration*)defaultConfiguration
 {
     JXPictureSelectionViewConfiguration* config=[[JXPictureSelectionViewConfiguration alloc] init];
+    config.capacity=9;
     config.numberOfColumns=3;
     config.paddingLeft=10;
     config.paddingRight=10;
