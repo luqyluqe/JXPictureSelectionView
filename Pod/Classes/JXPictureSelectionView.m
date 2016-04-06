@@ -101,7 +101,12 @@
 
 -(void)addRemotePictureWithURL:(NSURL *)url
 {
-    
+    [self.pictures addObject:url];
+    UIImageView* pictureView=[[UIImageView alloc] init];
+    [self addPictureView:pictureView];
+    if (self.loadRemotePictureAction) {
+        self.loadRemotePictureAction(pictureView);
+    }
 }
 
 -(void)addPictureView:(UIImageView*)pictureView
