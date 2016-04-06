@@ -7,6 +7,7 @@
 //
 
 #import "JXViewController.h"
+#import "JXPictureSelectionView.h"
 
 @interface JXViewController ()
 
@@ -18,6 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor=[UIColor blueColor];
+    CGRect bounds=self.view.bounds;
+    JXPictureSelectionView* pictureSelectionView=[[JXPictureSelectionView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height)];
+    UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
+    for (int i=0; i<9; i++) {
+        [pictureSelectionView addPicture:cannian];
+    }
+    [self.view addSubview:pictureSelectionView];
 }
 
 - (void)didReceiveMemoryWarning

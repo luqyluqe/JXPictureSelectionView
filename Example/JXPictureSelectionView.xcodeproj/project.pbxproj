@@ -23,6 +23,13 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		636E41D6B64BFD8270BADC57 /* Pods_JXPictureSelectionView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA3A4508DF997BDDB4E606A /* Pods_JXPictureSelectionView_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		A93461C71CB4A1AB0007F2AA /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A93461B51CB4A1AB0007F2AA /* .gitkeep */; };
+		A93461C81CB4A1AB0007F2AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93461B61CB4A1AB0007F2AA /* Images.xcassets */; };
+		A93461C91CB4A1AB0007F2AA /* JXPictureSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93461B91CB4A1AB0007F2AA /* JXPictureSelectionView.m */; };
+		A93461CA1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A93461BB1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.m */; };
+		A93461CB1CB4A1AB0007F2AA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93461BE1CB4A1AB0007F2AA /* Info.plist */; };
+		A93461CC1CB4A1AB0007F2AA /* JXPictureSelectionView.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A93461C01CB4A1AB0007F2AA /* JXPictureSelectionView.xcconfig */; };
+		A93461CD1CB4A1AB0007F2AA /* JXPictureSelectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A93461C11CB4A1AB0007F2AA /* JXPictureSelectionView-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,18 @@
 		705F28AAD95529F8D3244F0A /* Pods-JXPictureSelectionView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXPictureSelectionView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXPictureSelectionView_Tests/Pods-JXPictureSelectionView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8FC73327B46DF435529D015B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A93461B51CB4A1AB0007F2AA /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		A93461B61CB4A1AB0007F2AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A93461B81CB4A1AB0007F2AA /* JXPictureSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPictureSelectionView.h; sourceTree = "<group>"; };
+		A93461B91CB4A1AB0007F2AA /* JXPictureSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPictureSelectionView.m; sourceTree = "<group>"; };
+		A93461BA1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPictureSelectionViewConfiguration.h; sourceTree = "<group>"; };
+		A93461BB1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPictureSelectionViewConfiguration.m; sourceTree = "<group>"; };
+		A93461BE1CB4A1AB0007F2AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A93461BF1CB4A1AB0007F2AA /* JXPictureSelectionView.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = JXPictureSelectionView.modulemap; sourceTree = "<group>"; };
+		A93461C01CB4A1AB0007F2AA /* JXPictureSelectionView.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = JXPictureSelectionView.xcconfig; sourceTree = "<group>"; };
+		A93461C11CB4A1AB0007F2AA /* JXPictureSelectionView-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JXPictureSelectionView-dummy.m"; sourceTree = "<group>"; };
+		A93461C21CB4A1AB0007F2AA /* JXPictureSelectionView-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JXPictureSelectionView-prefix.pch"; sourceTree = "<group>"; };
+		A93461C31CB4A1AB0007F2AA /* JXPictureSelectionView-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JXPictureSelectionView-umbrella.h"; sourceTree = "<group>"; };
 		ADDDD496BF3B2B4DF2049D6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AFA3A4508DF997BDDB4E606A /* Pods_JXPictureSelectionView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXPictureSelectionView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B2A45B7C6A8A6C28CD3E16 /* Pods-JXPictureSelectionView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXPictureSelectionView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXPictureSelectionView_Example/Pods-JXPictureSelectionView_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +115,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				A93461C61CB4A1AB0007F2AA /* Development Pods */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for JXPictureSelectionView */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -180,6 +200,68 @@
 				ADDDD496BF3B2B4DF2049D6F /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		A93461B71CB4A1AB0007F2AA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A93461B51CB4A1AB0007F2AA /* .gitkeep */,
+				A93461B61CB4A1AB0007F2AA /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A93461BC1CB4A1AB0007F2AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A93461B81CB4A1AB0007F2AA /* JXPictureSelectionView.h */,
+				A93461B91CB4A1AB0007F2AA /* JXPictureSelectionView.m */,
+				A93461BA1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.h */,
+				A93461BB1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A93461BD1CB4A1AB0007F2AA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A93461B71CB4A1AB0007F2AA /* Assets */,
+				A93461BC1CB4A1AB0007F2AA /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		A93461C41CB4A1AB0007F2AA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A93461BE1CB4A1AB0007F2AA /* Info.plist */,
+				A93461BF1CB4A1AB0007F2AA /* JXPictureSelectionView.modulemap */,
+				A93461C01CB4A1AB0007F2AA /* JXPictureSelectionView.xcconfig */,
+				A93461C11CB4A1AB0007F2AA /* JXPictureSelectionView-dummy.m */,
+				A93461C21CB4A1AB0007F2AA /* JXPictureSelectionView-prefix.pch */,
+				A93461C31CB4A1AB0007F2AA /* JXPictureSelectionView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JXPictureSelectionView";
+			sourceTree = "<group>";
+		};
+		A93461C51CB4A1AB0007F2AA /* JXPictureSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A93461BD1CB4A1AB0007F2AA /* Pod */,
+				A93461C41CB4A1AB0007F2AA /* Support Files */,
+			);
+			name = JXPictureSelectionView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		A93461C61CB4A1AB0007F2AA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A93461C51CB4A1AB0007F2AA /* JXPictureSelectionView */,
+			);
+			name = "Development Pods";
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		DCC4C886D53D74297CDE4956 /* Pods */ = {
@@ -277,8 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				A93461C81CB4A1AB0007F2AA /* Images.xcassets in Resources */,
+				A93461CB1CB4A1AB0007F2AA /* Info.plist in Resources */,
+				A93461CC1CB4A1AB0007F2AA /* JXPictureSelectionView.xcconfig in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				A93461C71CB4A1AB0007F2AA /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +477,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* JXAppDelegate.m in Sources */,
+				A93461CA1CB4A1AB0007F2AA /* JXPictureSelectionViewConfiguration.m in Sources */,
 				6003F5A7195388D20070C39A /* JXViewController.m in Sources */,
+				A93461C91CB4A1AB0007F2AA /* JXPictureSelectionView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				A93461CD1CB4A1AB0007F2AA /* JXPictureSelectionView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

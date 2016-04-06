@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "JXPictureSelectionView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of JXPictureSelectionView."
+  s.summary          = "Nothing."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,13 +17,14 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+Nothing special.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/JXPictureSelectionView"
+  s.homepage         = "https://github.com/luqyluqe/JXPictureSelectionView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "luqyluqe" => "luqy.luqe@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/JXPictureSelectionView.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/luqyluqe/JXPictureSelectionView.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'

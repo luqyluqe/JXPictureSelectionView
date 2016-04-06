@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.1.0):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.0)
+  - FBSnapshotTestCase/Core (2.1.0)
+  - FBSnapshotTestCase/SwiftSupport (2.1.0):
+    - FBSnapshotTestCase/Core
+  - JXPictureSelectionView (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - JXPictureSelectionView (from `../`)
+
+EXTERNAL SOURCES:
+  JXPictureSelectionView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
+  JXPictureSelectionView: babd0bb4ba509056d163c7ad4e3c1c9cdfe444e2
+
+COCOAPODS: 0.39.0

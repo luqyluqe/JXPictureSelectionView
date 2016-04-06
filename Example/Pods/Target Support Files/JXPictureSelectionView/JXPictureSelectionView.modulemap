@@ -1,0 +1,6 @@
+framework module JXPictureSelectionView {
+  umbrella header "JXPictureSelectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
