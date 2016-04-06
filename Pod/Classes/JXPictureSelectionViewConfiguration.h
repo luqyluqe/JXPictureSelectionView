@@ -19,6 +19,7 @@
 @property (strong,nonatomic) UIImage* addButtonImage;
 @property (assign,nonatomic) CGSize addButtonImageSize;
 @property (copy,nonatomic) UIColor* addButtonBackgroundColor;
+@property (assign,nonatomic) NSTimeInterval animationDuration;
 
 +(JXPictureSelectionViewConfiguration*)defaultConfiguration;
 

@@ -22,6 +22,7 @@
     config.addButtonImage=[UIImage imageNamed:@"plus"];
     config.addButtonImageSize=CGSizeMake(80, 80);
     config.addButtonBackgroundColor=[UIColor clearColor];
+    config.animationDuration=0.4;
     return config;
 }
 
