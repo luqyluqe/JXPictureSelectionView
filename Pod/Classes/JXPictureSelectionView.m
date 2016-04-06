@@ -126,6 +126,7 @@
 
 -(void)layoutAddButton
 {
+    self.addButton.hidden=self.pictures.count>=self.config.capacity;
     NSUInteger index=self.pictures.count;
     CGPoint position=[self positionOfIndex:index];
     self.addButton.center=position;
