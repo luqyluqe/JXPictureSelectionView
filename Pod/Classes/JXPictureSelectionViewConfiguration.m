@@ -16,6 +16,8 @@
     config.paddingBottom=10;
     config.gap=10;
     config.aspectRatio=1;
+    config.removeButtonImage=[UIImage imageNamed:@"remove_button"];
+    config.removeButtonSize=CGSizeMake(20,20);
     return config;
 }
 

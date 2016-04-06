@@ -49,8 +49,8 @@
     
     UIButton* removeButton=[UIButton buttonWithType:UIButtonTypeCustom];
     removeButton.tag=tag;
-    [removeButton setBackgroundImage:[UIImage imageNamed:@"remove_button"] forState:UIControlStateNormal];
-    removeButton.frame=CGRectMake(0, 0, 16, 16);
+    [removeButton setBackgroundImage:self.config.removeButtonImage forState:UIControlStateNormal];
+    removeButton.frame=CGRectMake(0, 0, self.config.removeButtonSize.width,self.config.removeButtonSize.height);
     removeButton.center=CGPointMake(pictureView.frame.origin.x+self.pictureWidth, pictureView.frame.origin.y);
     removeButton.tag=tag;
     [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

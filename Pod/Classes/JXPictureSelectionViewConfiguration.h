@@ -13,6 +13,8 @@
 @property (assign,nonatomic) CGFloat paddingBottom;
 @property (assign,nonatomic) CGFloat gap;
 @property (assign,nonatomic) CGFloat aspectRatio;
+@property (strong,nonatomic) UIImage* removeButtonImage;
+@property (assign,nonatomic) CGSize removeButtonSize;
 
 +(JXPictureSelectionViewConfiguration*)defaultConfiguration;
 
