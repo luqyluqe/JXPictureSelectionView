@@ -21,7 +21,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor=[UIColor blueColor];
     CGRect bounds=self.view.bounds;
-    JXPictureSelectionView* pictureSelectionView=[[JXPictureSelectionView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height)];
+    JXPictureSelectionViewConfiguration* config=[JXPictureSelectionViewConfiguration defaultConfiguration];
+    config.rowGap=20;
+    config.columnGap=8;
+    JXPictureSelectionView* pictureSelectionView=[[JXPictureSelectionView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height) configuration:config];
     UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
     for (int i=0; i<20; i++) {
         [pictureSelectionView addPicture:cannian];

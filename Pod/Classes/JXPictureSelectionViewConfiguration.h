@@ -12,12 +12,12 @@
 @property (assign,nonatomic) CGFloat paddingRight;
 @property (assign,nonatomic) CGFloat paddingTop;
 @property (assign,nonatomic) CGFloat paddingBottom;
-@property (assign,nonatomic) CGFloat gap;
+@property (assign,nonatomic) CGFloat rowGap;
+@property (assign,nonatomic) CGFloat columnGap;
 @property (assign,nonatomic) CGFloat aspectRatio;
 @property (strong,nonatomic) UIImage* removeButtonImage;
 @property (assign,nonatomic) CGSize removeButtonSize;
 @property (strong,nonatomic) UIImage* addButtonImage;
-@property (assign,nonatomic) CGSize addButtonImageSize;
 @property (copy,nonatomic) UIColor* addButtonBackgroundColor;
 @property (assign,nonatomic) NSTimeInterval animationDuration;
 

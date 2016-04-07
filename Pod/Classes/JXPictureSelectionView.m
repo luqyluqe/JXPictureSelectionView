@@ -27,7 +27,7 @@
         self.config=configuration;
         self.pictures=[[NSMutableArray alloc] init];
         self.userInteractionEnabled=YES;
-        self.pictureWidth=(self.bounds.size.width-self.config.paddingLeft-self.config.paddingRight-self.config.gap*(self.config.numberOfColumns-1))/self.config.numberOfColumns;
+        self.pictureWidth=(self.bounds.size.width-self.config.paddingLeft-self.config.paddingRight-self.config.columnGap*(self.config.numberOfColumns-1))/self.config.numberOfColumns;
         self.pictureHeight=self.pictureWidth/self.config.aspectRatio;
         self.userInteractionEnabled=YES;
         [self initAddButton];
@@ -38,7 +38,7 @@
 -(void)initAddButton
 {
     self.addButton=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.pictureWidth, self.pictureHeight)];
-    UIImageView* addButtonImageView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.config.addButtonImageSize.width, self.config.addButtonImageSize.height)];
+    UIImageView* addButtonImageView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.pictureWidth, self.pictureHeight)];
     addButtonImageView.image=self.config.addButtonImage;
     addButtonImageView.center=CGPointMake(self.addButton.bounds.origin.x+self.pictureWidth/2, self.addButton.bounds.origin.y+self.pictureHeight/2);
     [self.addButton addSubview:addButtonImageView];
@@ -115,7 +115,7 @@
     NSUInteger column=index%self.config.numberOfColumns;
     NSUInteger row=index/self.config.numberOfColumns;
     pictureView.tag=index;
-    pictureView.frame=CGRectMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row, self.pictureWidth, self.pictureHeight);
+    pictureView.frame=CGRectMake(self.config.paddingLeft+(self.pictureWidth+self.config.columnGap)*column, self.config.paddingTop+(self.pictureHeight+self.config.rowGap)*row, self.pictureWidth, self.pictureHeight);
     [self addSubview:pictureView];
     
     UIButton* removeButton=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -133,7 +133,7 @@
 {
     NSUInteger column=index%self.config.numberOfColumns;
     NSUInteger row=index/self.config.numberOfColumns;
-    CGPoint position=CGPointMake(self.config.paddingLeft+(self.pictureWidth+self.config.gap)*column+self.pictureWidth/2, self.config.paddingTop+(self.pictureHeight+self.config.gap)*row+self.pictureHeight/2);
+    CGPoint position=CGPointMake(self.config.paddingLeft+(self.pictureWidth+self.config.columnGap)*column+self.pictureWidth/2, self.config.paddingTop+(self.pictureHeight+self.config.rowGap)*row+self.pictureHeight/2);
     return position;
 }
 

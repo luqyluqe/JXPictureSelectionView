@@ -15,12 +15,12 @@
     config.paddingRight=10;
     config.paddingTop=10;
     config.paddingBottom=10;
-    config.gap=10;
+    config.rowGap=10;
+    config.columnGap=10;
     config.aspectRatio=1;
     config.removeButtonImage=[UIImage imageNamed:@"remove_button"];
     config.removeButtonSize=CGSizeMake(20,20);
     config.addButtonImage=[UIImage imageNamed:@"plus"];
-    config.addButtonImageSize=CGSizeMake(80, 80);
     config.addButtonBackgroundColor=[UIColor clearColor];
     config.animationDuration=0.4;
     return config;
