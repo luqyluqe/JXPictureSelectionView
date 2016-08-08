@@ -15,6 +15,7 @@
 @property (assign,nonatomic) CGFloat rowGap;
 @property (assign,nonatomic) CGFloat columnGap;
 @property (assign,nonatomic) CGFloat aspectRatio;
+@property (assign,nonatomic) CGFloat cornerRadius;
 @property (strong,nonatomic) UIImage* removeButtonImage;
 @property (assign,nonatomic) CGSize removeButtonSize;
 @property (strong,nonatomic) UIImage* addButtonImage;

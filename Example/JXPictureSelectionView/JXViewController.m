@@ -19,11 +19,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor=[UIColor blueColor];
+    self.view.backgroundColor=[UIColor colorWithRed:0.1 green:0.6 blue:0.8 alpha:1];
     CGRect bounds=self.view.bounds;
     JXPictureSelectionViewConfiguration* config=[JXPictureSelectionViewConfiguration defaultConfiguration];
-    config.rowGap=20;
-    config.columnGap=8;
+    config.paddingLeft=config.paddingRight=16;
+    config.rowGap=12;
+    config.columnGap=12;
+    config.cornerRadius=4;
     JXPictureSelectionViewController* pictureSelectionVC=[[JXPictureSelectionViewController alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height) configuration:config];
     UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
     for (int i=0; i<20; i++) {

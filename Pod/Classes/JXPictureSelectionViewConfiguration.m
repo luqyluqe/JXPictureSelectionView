@@ -18,6 +18,7 @@
     config.rowGap=10;
     config.columnGap=10;
     config.aspectRatio=1;
+    config.cornerRadius=0;
     config.removeButtonImage=[UIImage imageNamed:@"remove_button"];
     config.removeButtonSize=CGSizeMake(20,20);
     config.addButtonImage=[UIImage imageNamed:@"plus"];
