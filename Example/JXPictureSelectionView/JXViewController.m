@@ -31,6 +31,7 @@
     for (int i=0; i<20; i++) {
         [pictureSelectionVC addPicture:cannian];
     }
+    [self addChildViewController:pictureSelectionVC];
     [self.view addSubview:pictureSelectionVC.view];
 }
 

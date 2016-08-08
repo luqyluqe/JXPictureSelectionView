@@ -48,16 +48,17 @@
     [self layoutAddButton];
 }
 
--(void)addPicture:(UIImage*)picture
+-(UIImageView*)addPicture:(UIImage*)picture
 {
     if (!picture||self.pictures.count>=self.config.capacity) {
-        return;
+        return nil;
     }
     [self.pictures addObject:picture];
     UIImageView* pictureView=[[UIImageView alloc] initWithImage:picture];
     pictureView.layer.cornerRadius=self.config.cornerRadius;
     pictureView.clipsToBounds=YES;
     [self addPictureView:pictureView];
+    return pictureView;
 }
 
 -(void)removeButtonPressed:(UIButton*)sender
