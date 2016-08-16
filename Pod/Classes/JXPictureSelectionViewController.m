@@ -10,7 +10,7 @@
 
 @interface JXPictureSelectionViewController ()
 
-@property (nonatomic,strong) NSMutableArray<UIImageView*>* pictureViews;
+@property (nonatomic,assign) BOOL viewDidAppear;
 
 @end
 
@@ -19,26 +19,17 @@
 -(instancetype)initWithFrame:(CGRect)frame configuration:(JXPictureSelectionViewConfiguration *)configuration
 {
     if (self=[super init]) {
-        self.view=[[JXPictureSelectionView alloc] initWithFrame:frame configuration:configuration];
-        self.pictureViews=[[NSMutableArray alloc] init];
-        NSAssert(self.pictureViews!=nil, @"....");
+        JXPictureSelectionView* view=[[JXPictureSelectionView alloc] initWithFrame:frame configuration:configuration];
+        view.delegate=self;
+        self.view=view;
+        self.viewDidAppear=NO;
     }
     return self;
 }
 
 -(void)addPicture:(UIImage*)picture
 {
-    if(!self.pictureViews){
-        self.pictureViews=[[NSMutableArray alloc] init];
-    }
-    UIImageView* pictureView=[(JXPictureSelectionView*)self.view addPicture:picture];
-    if (pictureView) {
-        [self.pictureViews addObject:pictureView];
-    }
-}
--(void)addPictures:(NSArray*)pictures
-{
-    [(JXPictureSelectionView*)self.view addPictures:pictures];
+    [(JXPictureSelectionView*)self.view addPicture:picture bindTapAction:self.viewDidAppear];
 }
 
 -(void)viewDidLoad {
@@ -53,21 +44,22 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSAssert(self.pictureViews!=nil, @"....");
-    NSAssert(self.pictureViews.count>0,@"....");
-    for (UIImageView* pictureView in self.pictureViews) {
-        pictureView.userInteractionEnabled=YES;
-        UITapGestureRecognizer* tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
-        [pictureView addGestureRecognizer:tapGestureRecognizer];
-    }
+    [super viewDidAppear:animated];
+    self.viewDidAppear=YES;
+    [(JXPictureSelectionView*)self.view bindTapOnPictureAction];
 }
 
--(void)pictureViewTapped:(UITapGestureRecognizer*)tapGestureRecognizer
+-(void)viewWillDisappear:(BOOL)animated
 {
-    UIImageView* sender=(UIImageView*)tapGestureRecognizer.view;
-    if ([self respondsToSelector:@selector(pictureSelectionView:didTapOnPictureView:atIndex:)]) {
-        [self pictureSelectionView:(JXPictureSelectionView*)self.view didTapOnPictureView:sender atIndex:sender.tag];
-    }
+    [(JXPictureSelectionView*)self.view unbindTapOnPictureAction];
+    self.viewDidAppear=NO;
+    [super viewWillDisappear:animated];
+}
+
+#pragma mark - JXPictureSelectionViewDelegate
+-(void)pictureSelectionView:(JXPictureSelectionView *)pictureSelectionView didTapOnPictureView:(UIImageView *)pictureView atIndex:(NSInteger)index
+{
+    
 }
 
 @end

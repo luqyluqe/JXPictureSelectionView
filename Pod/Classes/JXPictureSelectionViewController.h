@@ -13,6 +13,5 @@
 -(instancetype)initWithFrame:(CGRect)frame configuration:(JXPictureSelectionViewConfiguration*)configuration;
 
 -(void)addPicture:(UIImage*)picture;
--(void)addPictures:(NSArray*)pictures;
 
 @end

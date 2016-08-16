@@ -23,15 +23,19 @@ typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictur
 @property (weak,nonatomic) id<JXPictureSelectionViewDelegate> delegate;
 @property (strong,nonatomic) JXPictureSelectionViewConfiguration* config;
 @property (strong,nonatomic) NSMutableArray* pictures;
+@property (strong,nonatomic) NSMutableArray<UIImageView*>* pictureViews;
 @property (copy,nonatomic) JXPictureSelectionViewAddButtonAction addButtonAction;
 @property (copy,nonatomic) JXPictureSelectionViewLoadRemotePictureAction loadRemotePictureAction;
 
 -(instancetype)initWithFrame:(CGRect)frame;
 -(instancetype)initWithFrame:(CGRect)frame configuration:(JXPictureSelectionViewConfiguration*)configuration;
 
+-(UIImageView*)addPicture:(UIImage*)picture bindTapAction:(BOOL)bindTapAction;
 -(UIImageView*)addPicture:(UIImage*)picture;
 -(void)addPictures:(NSArray*)pictures;
-
 -(void)addRemotePictureWithURL:(NSURL*)url;
+
+-(void)bindTapOnPictureAction;
+-(void)unbindTapOnPictureAction;
 
 @end

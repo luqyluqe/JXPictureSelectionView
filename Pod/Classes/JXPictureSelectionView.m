@@ -26,6 +26,7 @@
     if (self=[super initWithFrame:frame]) {
         self.config=configuration;
         self.pictures=[[NSMutableArray alloc] init];
+        self.pictureViews=[[NSMutableArray alloc] init];
         self.userInteractionEnabled=YES;
         self.pictureWidth=(self.bounds.size.width-self.config.paddingLeft-self.config.paddingRight-self.config.columnGap*(self.config.numberOfColumns-1))/self.config.numberOfColumns;
         self.pictureHeight=self.pictureWidth/self.config.aspectRatio;
@@ -46,6 +47,16 @@
     [self.addButton addGestureRecognizer:tapRecognizer];
     [self addSubview:self.addButton];
     [self layoutAddButton];
+}
+
+-(UIImageView*)addPicture:(UIImage *)picture bindTapAction:(BOOL)bindTapAction
+{
+    UIImageView* pictureView=[self addPicture:picture];
+    if (bindTapAction) {
+        UITapGestureRecognizer* tapRecog=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
+        [pictureView addGestureRecognizer:tapRecog];
+    }
+    return pictureView;
 }
 
 -(UIImageView*)addPicture:(UIImage*)picture
@@ -118,6 +129,7 @@
 
 -(void)addPictureView:(UIImageView*)pictureView
 {
+    [self.pictureViews addObject:pictureView];
     NSUInteger index=(self.subviews.count-1)/2;
     NSUInteger column=index%self.config.numberOfColumns;
     NSUInteger row=index/self.config.numberOfColumns;
@@ -134,6 +146,9 @@
     [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:removeButton];
     [self layoutAddButton];
+    
+    UITapGestureRecognizer* tapRecog=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
+    [pictureView addGestureRecognizer:tapRecog];
 }
 
 -(CGPoint)positionOfIndex:(NSUInteger)index
@@ -160,6 +175,35 @@
     }
     if (self.addButtonAction) {
         self.addButtonAction();
+    }
+}
+
+-(void)bindTapOnPictureAction
+{
+    for (UIImageView* pictureView in self.pictureViews) {
+        pictureView.userInteractionEnabled=YES;
+        
+        UITapGestureRecognizer* tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
+        [pictureView addGestureRecognizer:tapGestureRecognizer];
+    }
+}
+-(void)unbindTapOnPictureAction
+{
+    for (UIImageView* pictureView in self.pictureViews) {
+        for (UIGestureRecognizer* gestureRecog in pictureView.gestureRecognizers) {
+            if ([gestureRecog isKindOfClass:[UITapGestureRecognizer class]]) {
+                [pictureView removeGestureRecognizer:gestureRecog];
+                break;
+            }
+        }
+    }
+}
+
+-(void)pictureViewTapped:(UITapGestureRecognizer*)tapGestureRecognizer
+{
+    UIImageView* sender=(UIImageView*)tapGestureRecognizer.view;
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(pictureSelectionView:didTapOnPictureView:atIndex:)]) {
+        [self.delegate pictureSelectionView:self didTapOnPictureView:sender atIndex:sender.tag];
     }
 }
 
