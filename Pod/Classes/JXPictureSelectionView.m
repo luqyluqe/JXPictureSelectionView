@@ -99,14 +99,13 @@
             [view removeFromSuperview];
         }else if (view.tag>index){
             view.tag-=1;
+            for (UIView* subview in view.subviews) {
+                subview.tag=view.tag;
+            }
             CGPoint position=[self positionOfIndex:view.tag];
             if ([view isKindOfClass:[UIImageView class]]) {
                 [UIView animateWithDuration:self.config.animationDuration animations:^{
                     view.center=position;
-                }];
-            }else if ([view isKindOfClass:[UIButton class]]) {
-                [UIView animateWithDuration:self.config.animationDuration animations:^{
-                    view.center=CGPointMake(position.x+self.pictureWidth/2, position.y-self.pictureHeight/2);
                 }];
             }
         }
@@ -130,7 +129,7 @@
 -(void)addPictureView:(UIImageView*)pictureView
 {
     [self.pictureViews addObject:pictureView];
-    NSUInteger index=(self.subviews.count-1)/2;
+    NSUInteger index=self.pictures.count-1;
     NSUInteger column=index%self.config.numberOfColumns;
     NSUInteger row=index/self.config.numberOfColumns;
     pictureView.tag=index;
@@ -140,11 +139,11 @@
     UIButton* removeButton=[UIButton buttonWithType:UIButtonTypeCustom];
     removeButton.tag=index;
     [removeButton setBackgroundImage:self.config.removeButtonImage forState:UIControlStateNormal];
-    removeButton.frame=CGRectMake(0, 0, self.config.removeButtonSize.width,self.config.removeButtonSize.height);
-    removeButton.center=CGPointMake(pictureView.frame.origin.x+self.pictureWidth, pictureView.frame.origin.y);
+    removeButton.bounds=CGRectMake(0, 0, self.config.removeButtonSize.width,self.config.removeButtonSize.height);
+    removeButton.center=CGPointMake(pictureView.bounds.origin.x+self.pictureWidth+self.config.removeButtonPosition.x, pictureView.bounds.origin.y-self.config.removeButtonPosition.y);
     removeButton.tag=index;
     [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:removeButton];
+    [pictureView addSubview:removeButton];
     [self layoutAddButton];
     
     UITapGestureRecognizer* tapRecog=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];

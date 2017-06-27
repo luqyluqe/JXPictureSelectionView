@@ -18,6 +18,7 @@
 @property (assign,nonatomic) CGFloat cornerRadius;
 @property (strong,nonatomic) UIImage* removeButtonImage;
 @property (assign,nonatomic) CGSize removeButtonSize;
+@property (assign,nonatomic) CGPoint removeButtonPosition;  //related to the picture's top-right corner
 @property (strong,nonatomic) UIImage* addButtonImage;
 @property (copy,nonatomic) UIColor* addButtonBackgroundColor;
 @property (assign,nonatomic) NSTimeInterval animationDuration;

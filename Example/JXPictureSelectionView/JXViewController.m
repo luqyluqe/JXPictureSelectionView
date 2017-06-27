@@ -26,6 +26,7 @@
     config.rowGap=12;
     config.columnGap=12;
     config.cornerRadius=4;
+    config.removeButtonPosition=CGPointMake(-12, -12);
     JXPictureSelectionViewController* pictureSelectionVC=[[JXPictureSelectionViewController alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+20, bounds.size.width, bounds.size.height) configuration:config];
     UIImage* cannian=[UIImage imageNamed:@"cannian.jpg"];
     for (int i=0; i<20; i++) {
