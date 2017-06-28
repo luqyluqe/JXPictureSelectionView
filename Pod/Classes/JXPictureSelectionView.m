@@ -147,6 +147,7 @@
     [pictureView addSubview:removeButton];
     [self layoutAddButton];
     
+    pictureView.userInteractionEnabled=YES;
     UITapGestureRecognizer* tapRecog=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
     [pictureView addGestureRecognizer:tapRecog];
 }
@@ -181,8 +182,6 @@
 -(void)bindTapOnPictureAction
 {
     for (UIImageView* pictureView in self.pictureViews) {
-        pictureView.userInteractionEnabled=YES;
-        
         UITapGestureRecognizer* tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureViewTapped:)];
         [pictureView addGestureRecognizer:tapGestureRecognizer];
     }

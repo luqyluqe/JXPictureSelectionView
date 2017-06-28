@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JXPictureSelectionView"
-  s.version          = "0.9.3"
+  s.version          = "0.9.4"
   s.summary          = "Nothing."
 
 # This description is used to generate tags and improve search results.
