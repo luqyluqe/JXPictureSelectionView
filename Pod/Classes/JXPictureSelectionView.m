@@ -76,6 +76,9 @@
 -(void)removeButtonPressed:(UIButton*)sender
 {
     [self removePictureAtIndex:sender.tag];
+    if ([self.delegate respondsToSelector:@selector(pictureSelectionView:didRemovePictureAtIndex:)]) {
+        [self.delegate pictureSelectionView:self didRemovePictureAtIndex:sender.tag];
+    }
 }
 
 -(void)addPictures:(NSArray *)pictures

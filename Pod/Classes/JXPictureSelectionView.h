@@ -15,6 +15,7 @@ typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictur
 -(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView didClickOnAddButton:(id)sender;
 -(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView loadRemotePictureAtURL:(NSURL*)url intoPictureView:(UIImageView*)pictureView;
 -(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView didTapOnPictureView:(UIImageView*)pictureView atIndex:(NSInteger)index;
+-(void)pictureSelectionView:(JXPictureSelectionView*)pictureSelectionView didRemovePictureAtIndex:(NSInteger)index;
 
 @end
 
