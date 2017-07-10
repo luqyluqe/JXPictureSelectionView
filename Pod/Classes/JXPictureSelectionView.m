@@ -25,8 +25,6 @@
 {
     if (self=[super initWithFrame:frame]) {
         self.config=configuration;
-        self.pictures=[[NSMutableArray alloc] init];
-        self.pictureViews=[[NSMutableArray alloc] init];
         self.userInteractionEnabled=YES;
         self.pictureWidth=(self.bounds.size.width-self.config.paddingLeft-self.config.paddingRight-self.config.columnGap*(self.config.numberOfColumns-1))/self.config.numberOfColumns;
         self.pictureHeight=self.pictureWidth/self.config.aspectRatio;
@@ -34,6 +32,22 @@
         [self initAddButton];
     }
     return self;
+}
+
+-(NSMutableArray*)pictures
+{
+    if (!_pictures) {
+        _pictures=[[NSMutableArray alloc] init];
+    }
+    return _pictures;
+}
+
+-(NSMutableArray<UIImageView*>*)pictureViews
+{
+    if (!_pictureViews) {
+        _pictureViews=[[NSMutableArray alloc] init];
+    }
+    return _pictureViews;
 }
 
 -(void)initAddButton
@@ -76,9 +90,6 @@
 -(void)removeButtonPressed:(UIButton*)sender
 {
     [self removePictureAtIndex:sender.tag];
-    if ([self.delegate respondsToSelector:@selector(pictureSelectionView:didRemovePictureAtIndex:)]) {
-        [self.delegate pictureSelectionView:self didRemovePictureAtIndex:sender.tag];
-    }
 }
 
 -(void)addPictures:(NSArray *)pictures
@@ -96,9 +107,7 @@
     [self.pictures removeObjectAtIndex:index];
     for (UIView* view in self.subviews) {
         if (view==self.addButton) {
-            [UIView animateWithDuration:self.config.animationDuration animations:^{
-                [self layoutAddButton];
-            }];
+            [self layoutAddButtonAnimated:YES];
         }else if (view.tag==index) {
             [view removeFromSuperview];
         }else if (view.tag>index){
@@ -114,6 +123,10 @@
             }
         }
     }
+    
+    if ([self.delegate respondsToSelector:@selector(pictureSelectionView:didRemovePictureAtIndex:)]) {
+        [self.delegate pictureSelectionView:self didRemovePictureAtIndex:index];
+    }
 }
 
 -(void)addRemotePictureWithURL:(NSURL *)url
@@ -128,6 +141,16 @@
     if (self.loadRemotePictureAction) {
         self.loadRemotePictureAction(pictureView,url);
     }
+}
+
+-(void)clear
+{
+    for (UIView* pictureView in self.pictureViews) {
+        [pictureView removeFromSuperview];
+    }
+    self.pictureViews=nil;
+    self.pictures=nil;
+    [self layoutAddButtonAnimated:YES];
 }
 
 -(void)addPictureView:(UIImageView*)pictureView
@@ -169,6 +192,17 @@
     NSUInteger index=self.pictures.count;
     CGPoint position=[self positionOfIndex:index];
     self.addButton.center=position;
+}
+
+-(void)layoutAddButtonAnimated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:self.config.animationDuration animations:^{
+            [self layoutAddButton];
+        }];
+    }else{
+        [self layoutAddButton];
+    }
 }
 
 -(void)addButtonTapped:(UIButton*)button

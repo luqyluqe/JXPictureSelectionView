@@ -35,6 +35,8 @@ typedef void(^JXPictureSelectionViewLoadRemotePictureAction)(UIImageView* pictur
 -(UIImageView*)addPicture:(UIImage*)picture;
 -(void)addPictures:(NSArray*)pictures;
 -(void)addRemotePictureWithURL:(NSURL*)url;
+-(void)removePictureAtIndex:(NSUInteger)index;
+-(void)clear;
 
 -(void)bindTapOnPictureAction;
 -(void)unbindTapOnPictureAction;
